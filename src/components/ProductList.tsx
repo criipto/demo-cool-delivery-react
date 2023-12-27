@@ -1,4 +1,4 @@
-import { Product } from '../../products';
+import { Product } from '../types';
 import ProductCard from './ProductCard';
 import ViewCartButton from './ViewCartButton';
 import { useShoppingCart } from 'context/ShoppingCartContext';

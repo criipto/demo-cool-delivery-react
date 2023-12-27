@@ -4,14 +4,24 @@ import ShoppingCart from 'pages/ShoppingCart';
 import NotFound from 'pages/NotFound';
 import { ShoppingCartProvider } from 'context/ShoppingCartContext';
 
-function App() {
+interface AppProps {
+  onToggleEnv: () => void;
+  currentEnvironment: string;
+}
+
+function App({ onToggleEnv, currentEnvironment }: AppProps) {
   return (
     <ShoppingCartProvider>
       <div className="min-h-screen lg:max-w-5xl mx-auto">
         <Routes>
           <Route
             path="/"
-            element={<Home />}
+            element={
+              <Home
+                onToggleEnv={onToggleEnv}
+                currentEnvironment={currentEnvironment}
+              />
+            }
           />
           <Route
             path="/cart"

@@ -1,4 +1,4 @@
-import { productsData } from '../../products';
+import { productsData } from '../products';
 import QuantityControlButton from './QuantityControlButton';
 
 type CartItemProps = {
