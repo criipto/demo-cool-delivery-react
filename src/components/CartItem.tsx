@@ -27,7 +27,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
           <p className="font-medium text-[15px]">{totalItemPrice(item!.price, quantity)},00 kr</p>
         </div>
         <img
-          src={item!.image}
+          src={`/products/${item!.image}`}
           className="max-h-[100px] py-3 pr-4 self-end"
         />
         <QuantityControlButton id={id} />
