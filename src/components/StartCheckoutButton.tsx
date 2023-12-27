@@ -6,7 +6,7 @@ import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
 
 export default function StartCheckoutButton() {
-  const { isCartEmpty } = useShoppingCart();
+  const { isCartEmpty, isAgeVerificationChecked } = useShoppingCart();
   const { result, logout } = useCriiptoVerify();
   const handleLogout = () => {
     logout({ redirectUri: window.location.origin + '/' });
@@ -23,9 +23,11 @@ export default function StartCheckoutButton() {
           />
           <div className="mt-3 text-ledt sm:mt-5">
             <h3 className="font-semibold leading-6 text-base900DarkPurple text-xl pt-6">Your age has been verified</h3>
-            <div className="mt-2">
-              <p className="text-sm text-lightBlue700">And your profile has been updated.</p>
-            </div>
+            {isAgeVerificationChecked && (
+              <div className="mt-2">
+                <p className="text-sm text-lightBlue700">And your profile has been updated.</p>
+              </div>
+            )}
           </div>
         </div>
       )}

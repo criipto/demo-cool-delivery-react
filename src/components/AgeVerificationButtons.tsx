@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
+import checkmark from '../assets/checkmark.png';
 import ageVerificationIcon from '../assets/age-verified-humans.png';
 
 export default function StartCheckoutButton() {
-  const { isCartEmpty } = useShoppingCart();
+  const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
   const { loginWithRedirect } = useCriiptoVerify();
+
   return (
     <div className="fixed bottom-0 w-full lg:max-w-5xl bg-white p-4 bg-white py-6 shadow-inner bg-gray-300">
       <div className="flex flex-col items-start content-start justify-start pt-4 mx-4">
@@ -42,15 +44,25 @@ export default function StartCheckoutButton() {
             <div className="back-button flex flex-row text-lightBlue800 font-semibold h-12 items-center justify-center py-2 text-sm shadow-sm mx-4 border-lightBlue700/30 border">Cancel</div>
           </Link>
         </div>
-        <div className="flex flex-row align-middle mx-4 border border-lightBlue100 p-2">
+        <div
+          className="flex flex-row align-middle mx-4 border border-lightBlue100 p-2"
+          onClick={onToggle}
+        >
           <input
             type="checkbox"
             id="checkbox"
-            checked={true}
+            checked={isAgeVerificationChecked}
             disabled={true}
             className="hidden"
           />
-          <span className="bg-lightBlue100 block w-6 h-6"></span>
+          <span className="block w-6 h-6 cursor-pointer bg-lightBlue100">
+            {isAgeVerificationChecked && (
+              <img
+                src={checkmark}
+                className="pt-[3px]"
+              />
+            )}
+          </span>
           <label
             className="text-lightBlue800 pl-2 text-xs self-center"
             htmlFor="checkbox"
