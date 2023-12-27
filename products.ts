@@ -16,7 +16,7 @@ export const productsData = {
       name: 'Carlsberg 47',
       abv: '7,0%',
       price: 23,
-      image: 'src/assets/products/Carlsberg-47.png',
+      image: 'Carlsberg-47.png',
       quantity: 0,
     },
     {
@@ -25,7 +25,7 @@ export const productsData = {
       name: 'Carlsberg Elephant',
       abv: '7,2%',
       price: 12,
-      image: 'src/assets/products/Carlsberg-Elephant.png',
+      image: 'Carlsberg-Elephant.png',
       quantity: 0,
     },
     {
@@ -34,7 +34,7 @@ export const productsData = {
       name: 'Carlsberg Nordic',
       abv: '0,5%',
       price: 12,
-      image: 'src/assets/products/Carlsberg-Nordic.png',
+      image: 'Carlsberg-Nordic.png',
       quantity: 0,
     },
     {
@@ -43,7 +43,7 @@ export const productsData = {
       name: 'Carlsberg pilsner',
       abv: '4,6%',
       price: 9,
-      image: 'src/assets/products/Carlsberg-pilsner.png',
+      image: 'Carlsberg-pilsner.png',
       quantity: 0,
     },
     {
@@ -52,7 +52,7 @@ export const productsData = {
       name: 'Jacobsen Maj Bock',
       abv: '3,5%',
       price: 12,
-      image: 'src/assets/products/Jacobsen-Maj-Bock.png',
+      image: 'Jacobsen-Maj-Bock.png',
       quantity: 0,
     },
   ],

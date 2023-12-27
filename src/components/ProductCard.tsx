@@ -21,7 +21,7 @@ export default function ProductCard(props: ProductCardProps) {
           <p className="font-medium text-[15px]">{price},00 kr</p>
         </div>
         <img
-          src={image}
+          src={`/products/${image}`}
           className="max-h-[100px] py-3 pr-4 mr-8"
         />
         <QuantityControlButton id={id} />
