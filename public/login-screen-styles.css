@@ -25,3 +25,7 @@ body,
 #headline .lang span {
   display: none;
 }
+
+.criipto-eid-selector .criipto-eid-btn.criipto-cancel-btn {
+  background: white;
+}
