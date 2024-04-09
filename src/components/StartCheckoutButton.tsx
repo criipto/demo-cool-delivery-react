@@ -28,10 +28,11 @@ export default function StartCheckoutButton() {
   }
 
   const isAbove18Norway = claims?.identityscheme === 'nobankid-oidc' && calculateAge(claims?.birthdate) !== undefined && calculateAge(claims?.birthdate)! >= 18;
+  const isAbove18Finland = claims?.identityscheme === 'fitupas' && calculateAge(claims?.birthdate) !== undefined && calculateAge(claims?.birthdate)! >= 18;
   const isAbove18Sweden = claims?.identityscheme === 'sebankid' && calculateAge(claims?.ssn) !== undefined && calculateAge(claims?.ssn)! >= 18;
   const isAbove18Denmark = claims?.identityscheme === 'dkmitid' && Number(claims?.age) !== undefined && Number(claims?.age)! >= 18;
 
-  const ageVerificationFailed = claims && !isAbove18Norway && !isAbove18Sweden && !isAbove18Denmark;
+  const ageVerificationFailed = claims && !isAbove18Norway && !isAbove18Sweden && !isAbove18Denmark && !isAbove18Finland;
 
   return (
     <div className="fixed bottom-0 w-full lg:max-w-5xl bg-white p-4 bg-white py-6 shadow-inner bg-gray-300">
