@@ -1,4 +1,5 @@
 import { productsData } from '../products';
+import { AbvLabel } from './AbvLabel';
 import QuantityControlButton from './QuantityControlButton';
 
 type CartItemProps = {
@@ -22,7 +23,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
             <h1 className="font-bold text-[15px]">
               {item!.volume} {item!.name}
             </h1>
-            <p className="text-lightBlue text-sm">{item!.abv}</p>
+            <p className="text-lightBlue text-sm"><AbvLabel>{item!.abv}</AbvLabel></p>
           </div>
           <p className="font-medium text-[15px]">{totalItemPrice(item!.price, quantity)},00 kr</p>
         </div>

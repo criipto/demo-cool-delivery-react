@@ -3,10 +3,13 @@ import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
 import checkmark from '../assets/checkmark.png';
 import ageVerificationIcon from '../assets/age-verified-humans.png';
+import { useCountry } from '../context/CountryContext';
+import { Button } from './Button';
 
-export default function StartCheckoutButton() {
+export default function AgeVerificationButtons() {
   const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
   const { loginWithRedirect } = useCriiptoVerify();
+  const { country } = useCountry();
 
   return (
     <div className="fixed bottom-0 w-full lg:max-w-5xl bg-white p-4 bg-white py-6 shadow-inner bg-gray-300">
@@ -24,24 +27,27 @@ export default function StartCheckoutButton() {
         </div>
       </div>
       <div>
-        <div className="flex flex-col bg-white justify-center items-between gap-2 w-full bottom-0 py-6">
-          <button
+        <div className="flex flex-col bg-white justify-center items-between gap-2 w-full bottom-0 py-6 px-4">
+          <Button
             type="button"
-            className={`mx-4 text-white h-12 justify-center bg-primary600 py-2 text-sm shadow-sm ${isCartEmpty ? 'cta-button-disabled' : 'cta-button-active'}`}
+            variant="primary"
+            disabled={isCartEmpty}
             onClick={(e) => {
-              if (isCartEmpty) {
-                e.preventDefault();
-              } else {
-                loginWithRedirect();
-              }
+              e.preventDefault();
+
+              if (isCartEmpty) return;
+
+              loginWithRedirect({
+                acrValues: 'urn:age-verification',
+                scope: 'openid is_over_15 is_over_16 is_over_18 is_over_21 is_over_65',
+                loginHint: country != null ? `country:${country}` : undefined,
+              });
             }}
           >
-            <div className="flex flex-row items-center justify-center">
-              <p className="font-semibold">Verify your age</p>
-            </div>
-          </button>
-          <Link to={'/cart'}>
-            <div className="back-button flex flex-row text-lightBlue800 font-semibold h-12 items-center justify-center py-2 text-sm shadow-sm mx-4 border-lightBlue700/30 border">Cancel</div>
+            Verify your age
+          </Button>
+          <Link to="/cart" tabIndex={-1}>
+            <Button variant="default">Cancel</Button>
           </Link>
         </div>
         <div
@@ -52,7 +58,7 @@ export default function StartCheckoutButton() {
             type="checkbox"
             id="checkbox"
             checked={isAgeVerificationChecked}
-            disabled={true}
+            disabled
             className="hidden"
           />
           <span className="block w-6 h-6 cursor-pointer bg-lightBlue100">

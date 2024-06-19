@@ -12,6 +12,7 @@ function CriiptoVerifyProviderWrapper() {
   const [environment, setEnvironment] = useState(searchParams.get('environment') ?? 'test');
 
   const domain = environment === 'test' ? 'demos-test.criipto.id' : 'demos.criipto.id';
+  const clientId = "urn:demos:cool-delivery-react";
 
   const handleToggleEnv = () => {
     setSearchParams((params) => {
@@ -25,7 +26,7 @@ function CriiptoVerifyProviderWrapper() {
   return (
     <CriiptoVerifyProvider
       domain={domain}
-      clientID="urn:demos:cool-delivery-react"
+      clientID={clientId}
       redirectUri={window.location.origin + '/cart'}
       sessionStore={window.sessionStorage}
       message="Log in to Cool Delivery"

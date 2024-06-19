@@ -13,6 +13,7 @@ export default withMT({
       lightBlue700: '#5A6192',
       lightBlue100: '#DDDFF3',
       lightBlue200: '#D5D9EB',
+      lightBlue50: '#ecedf8',
       darkPurple: '#362644',
       base900DarkPurple: '#302935', // Text, headings
       ashGrey400: '#8B94A6', // Disabled buttons

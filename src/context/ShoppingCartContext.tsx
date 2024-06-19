@@ -6,7 +6,7 @@ type ShoppingCartProviderProps = {
   children: ReactNode;
 };
 
-type CartItem = {
+export type CartItem = {
   id: number;
   quantity: number;
 };
@@ -16,6 +16,7 @@ type ShoppingCartContext = {
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
+  clearCart: () => void;
   cartTotal: number;
   cartQuantity: number;
   cartItems: CartItem[];
@@ -84,6 +85,10 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     });
   }
 
+  function clearCart() {
+    setCartItems([]);
+  }
+
   // Update profile toggle
   const [isAgeVerificationChecked, setIsAgeVerificationChecked] = useLocalStorage<boolean>('isAgeVerificationChecked', true);
 
@@ -92,7 +97,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   };
 
   return (
-    <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, cartTotal, isCartEmpty, isAgeVerificationChecked, onToggle: handleToggle }}>
+    <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, clearCart, cartQuantity, cartItems, cartTotal, isCartEmpty, isAgeVerificationChecked, onToggle: handleToggle }}>
       {children}
     </ShoppingCartContext.Provider>
   );

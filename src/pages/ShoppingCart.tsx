@@ -5,8 +5,10 @@ import StartCheckoutButton from '../components/StartCheckoutButton';
 import AgeVerificationButtons from '../components/AgeVerificationButtons';
 import boxIcon from '../assets/box-open-full-solid.png';
 import boxOutlineIcon from '../assets/box-open-full.png';
+import Header from '../components/Header';
+import { EnvProps } from '../types';
 
-export default function ShoppingCart() {
+export default function ShoppingCart({ onToggleEnv, currentEnvironment }: EnvProps) {
   const location = useLocation();
   const { cartItems } = useShoppingCart();
 
@@ -15,6 +17,7 @@ export default function ShoppingCart() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Header onToggleEnv={onToggleEnv} currentEnvironment={currentEnvironment} />
       <header className="bg-white h-[98px] flex flex-col items-center justify-center">
         <img
           src={boxIcon}
@@ -32,7 +35,7 @@ export default function ShoppingCart() {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col justify-center items-center content-center flex-grow">
+        <div className="flex flex-col justify-center items-center flex-grow">
           <img
             src={boxOutlineIcon}
             className="h-16 w-20"

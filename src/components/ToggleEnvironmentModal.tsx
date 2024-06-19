@@ -3,7 +3,7 @@ import { Button, Dialog, DialogBody, Switch } from '@material-tailwind/react';
 import gear from '../assets/gear-icon.png';
 import { EnvProps } from 'types';
 
-export default function Modal({ onToggleEnv, currentEnvironment }: EnvProps) {
+export default function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvProps) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(!open);
