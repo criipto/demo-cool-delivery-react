@@ -4,6 +4,13 @@ import useLocalStorage from '../hooks/useLocalStorage';
 export const availableCountries = ['DK', 'SE', 'NO', 'FI'] as const;
 export type Country = (typeof availableCountries)[number];
 
+export const countryLabels: Record<Country, string> = {
+  DK: 'Denmark',
+  SE: 'Sweden',
+  NO: 'Norway',
+  FI: 'Finland',
+};
+
 type CountryProviderProps = {
   children: ReactNode;
 };

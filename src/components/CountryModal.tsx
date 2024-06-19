@@ -1,6 +1,6 @@
 import { Fragment, ReactElement, useEffect, useState } from 'react';
 import { Button, Dialog, DialogBody } from '@material-tailwind/react';
-import { Country, availableCountries, useCountry } from '../context/CountryContext';
+import { Country, availableCountries, countryLabels, useCountry } from '../context/CountryContext';
 import { Flag } from './Flag';
 
 export function CountryModal(): ReactElement {
@@ -34,13 +34,13 @@ export function CountryModal(): ReactElement {
         handler={handleOpen}
       >
         <DialogBody className="flex flex-col items-center gap-2">
-          <h1 className="font-medium">Please select a country to continue</h1>
-          <div className="flex justify-around gap-5 w-full">
+          <h1 className="font-medium mb-2">Please select a country to continue</h1>
+          <div className="flex flex-col gap-5 w-full sm:flex-row sm:justify-around">
             {
               availableCountries.map((country) => (
-                <button key={country} onClick={() => updateCountry(country)}>
+                <button className="flex flex-col items-center" key={country} onClick={() => updateCountry(country)}>
                   <Flag className="w-20 h-14 border" country={country} />
-                  <span className="text-gray-600 font-semibold">{country}</span>
+                  <span className="text-gray-600 font-medium">{countryLabels[country]}</span>
                 </button>
               ))
             }
