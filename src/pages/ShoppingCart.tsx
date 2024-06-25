@@ -5,19 +5,15 @@ import StartCheckoutButton from '../components/StartCheckoutButton';
 import AgeVerificationButtons from '../components/AgeVerificationButtons';
 import boxIcon from '../assets/box-open-full-solid.png';
 import boxOutlineIcon from '../assets/box-open-full.png';
-import Header from '../components/Header';
-import { EnvProps } from '../types';
 
-export default function ShoppingCart({ onToggleEnv, currentEnvironment }: EnvProps) {
+export default function ShoppingCart() {
   const location = useLocation();
   const { cartItems } = useShoppingCart();
 
-  // Check if the current path is "/cart/checkout"
-  const isCheckoutPage = location.pathname === '/cart/checkout';
+  const isVerifyPage = location.pathname === '/cart/verify';
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header onToggleEnv={onToggleEnv} currentEnvironment={currentEnvironment} />
       <header className="bg-white h-[98px] flex flex-col items-center justify-center">
         <img
           src={boxIcon}
@@ -45,7 +41,7 @@ export default function ShoppingCart({ onToggleEnv, currentEnvironment }: EnvPro
           </p>
         </div>
       )}
-      {isCheckoutPage ? <AgeVerificationButtons /> : <StartCheckoutButton />}
+      {isVerifyPage ? <AgeVerificationButtons /> : <StartCheckoutButton />}
     </div>
   );
 }

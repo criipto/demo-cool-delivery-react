@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
-import checkmark from '../assets/checkmark.png';
 import ageVerificationIcon from '../assets/age-verified-humans.png';
 import { useCountry } from '../context/CountryContext';
 import { Button } from './Button';
+import { ages, useAgeVerification } from '../hooks/useAgeVerification';
 
 export default function AgeVerificationButtons() {
-  const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
+  const { isCartEmpty, cartItems } = useShoppingCart();
+  const { isUpdateAgeVerificationProfileChecked, onUpdateAgeVerificationProfileToggle } = useAgeVerification(cartItems);
   const { loginWithRedirect } = useCriiptoVerify();
   const { country } = useCountry();
 
@@ -39,7 +40,7 @@ export default function AgeVerificationButtons() {
 
               loginWithRedirect({
                 acrValues: 'urn:age-verification',
-                scope: 'openid is_over_15 is_over_16 is_over_18 is_over_21 is_over_65',
+                scope: `openid ${ages.map((age) => `is_over_${age}`).join(" ")}`,
                 loginHint: country != null ? `country:${country}` : undefined,
               });
             }}
@@ -52,21 +53,18 @@ export default function AgeVerificationButtons() {
         </div>
         <div
           className="flex flex-row align-middle mx-4 border border-lightBlue100 p-2"
-          onClick={onToggle}
+          onClick={onUpdateAgeVerificationProfileToggle}
         >
           <input
             type="checkbox"
             id="checkbox"
-            checked={isAgeVerificationChecked}
+            checked={isUpdateAgeVerificationProfileChecked}
             disabled
             className="hidden"
           />
-          <span className="block w-6 h-6 cursor-pointer bg-lightBlue100">
-            {isAgeVerificationChecked && (
-              <img
-                src={checkmark}
-                className="pt-[3px]"
-              />
+          <span className="block w-6 h-6 cursor-pointer border-2 border-lightBlue200 p-0.5">
+            {isUpdateAgeVerificationProfileChecked && (
+              <div className="w-full h-full bg-primary600"></div>
             )}
           </span>
           <label

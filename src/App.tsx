@@ -28,21 +28,11 @@ function App({ onToggleEnv, currentEnvironment }: AppProps) {
             />
             <Route
               path="/cart"
-              element={
-                <ShoppingCart
-                  onToggleEnv={onToggleEnv}
-                  currentEnvironment={currentEnvironment}
-                />
-              }
+              element={<ShoppingCart/>}
             />
             <Route
-              path="/cart/checkout"
-              element={
-                <ShoppingCart
-                  onToggleEnv={onToggleEnv}
-                  currentEnvironment={currentEnvironment}
-                />
-              }
+              path="/cart/verify"
+              element={<ShoppingCart />}
             />
             <Route
               path="/order-completed"

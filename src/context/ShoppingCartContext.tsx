@@ -21,8 +21,6 @@ type ShoppingCartContext = {
   cartQuantity: number;
   cartItems: CartItem[];
   isCartEmpty: boolean;
-  isAgeVerificationChecked: boolean;
-  onToggle: () => void;
 };
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
@@ -89,15 +87,20 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     setCartItems([]);
   }
 
-  // Update profile toggle
-  const [isAgeVerificationChecked, setIsAgeVerificationChecked] = useLocalStorage<boolean>('isAgeVerificationChecked', true);
-
-  const handleToggle = () => {
-    setIsAgeVerificationChecked((prevIsChecked) => !prevIsChecked);
-  };
-
   return (
-    <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, clearCart, cartQuantity, cartItems, cartTotal, isCartEmpty, isAgeVerificationChecked, onToggle: handleToggle }}>
+    <ShoppingCartContext.Provider
+      value={{
+        getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart,
+        clearCart,
+        cartQuantity,
+        cartItems,
+        cartTotal,
+        isCartEmpty
+      }}
+    >
       {children}
     </ShoppingCartContext.Provider>
   );
