@@ -19,12 +19,9 @@ export default function ShoppingCart() {
         <h1 className="font-bold">Your Order</h1>
       </header>
       {cartItems.length > 0 ? (
-        <div className="flex flex-col flex-grow gap-y-2 px-2 mx-2 pb-40">
+        <div className="mx-2 flex flex-grow flex-col gap-y-2 px-2 pb-40">
           {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              {...item}
-            />
+            <CartItem key={item.id} {...item} />
           ))}
         </div>
       ) : (
