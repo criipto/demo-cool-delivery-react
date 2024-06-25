@@ -12,7 +12,7 @@ export default function Modal({ onToggleEnv, currentEnvironment }: EnvProps) {
     <Fragment>
       <Button
         onClick={handleOpen}
-        className="bg-primary25 shadow-none p-0 hover:shadow-none"
+        className="bg-primary-25 shadow-none p-0 hover:shadow-none"
       >
         <img
           src={gear}

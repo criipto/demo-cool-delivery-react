@@ -6,7 +6,7 @@ import { EnvProps } from 'types';
 
 export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
   return (
-    <header className="bg-primary25 flex flex-row justify-between px-4 pt-3 pb-2">
+    <header className="bg-primary-25 flex flex-row justify-between px-4 pt-3 pb-2">
       <img
         src={logo}
         className="h-11"

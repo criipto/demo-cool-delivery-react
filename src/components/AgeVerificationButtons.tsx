@@ -17,9 +17,9 @@ export default function StartCheckoutButton() {
           aria-hidden="true"
         />
         <div>
-          <h3 className="font-semibold leading-6 text-base900DarkPurple text-xl pt-6">Age restricted items</h3>
+          <h3 className="font-semibold leading-6 text-deepPurple-900 text-xl pt-6">Age restricted items</h3>
           <div className="mt-2">
-            <p className="text-sm text-lightBlue700">Your order contains age-restricted items or items that require proof of identity. Please confirm that you are legally eligible to buy these items in your country.</p>
+            <p className="text-sm text-lightBlue-700">Your order contains age-restricted items or items that require proof of identity. Please confirm that you are legally eligible to buy these items in your country.</p>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function StartCheckoutButton() {
         <div className="flex flex-col bg-white justify-center items-between gap-2 w-full bottom-0 py-6">
           <button
             type="button"
-            className={`mx-4 text-white h-12 justify-center bg-primary600 py-2 text-sm shadow-sm ${isCartEmpty ? 'cta-button-disabled' : 'cta-button-active'}`}
+            className={`mx-4 text-white h-12 justify-center bg-primary-600 py-2 text-sm shadow-sm ${isCartEmpty ? 'cta-button-disabled' : 'cta-button-active'}`}
             onClick={(e) => {
               if (isCartEmpty) {
                 e.preventDefault();
@@ -41,11 +41,11 @@ export default function StartCheckoutButton() {
             </div>
           </button>
           <Link to={'/cart'}>
-            <div className="back-button flex flex-row text-lightBlue800 font-semibold h-12 items-center justify-center py-2 text-sm shadow-sm mx-4 border-lightBlue700/30 border">Cancel</div>
+            <div className="back-button flex flex-row text-lightBlue-800 font-semibold h-12 items-center justify-center py-2 text-sm shadow-sm mx-4 border-lightBlue-700/30 border">Cancel</div>
           </Link>
         </div>
         <div
-          className="flex flex-row align-middle mx-4 border border-lightBlue100 p-2"
+          className="flex flex-row align-middle mx-4 border border-lightBlue-100 p-2"
           onClick={onToggle}
         >
           <input
@@ -55,7 +55,7 @@ export default function StartCheckoutButton() {
             disabled={true}
             className="hidden"
           />
-          <span className="block w-6 h-6 cursor-pointer bg-lightBlue100">
+          <span className="block w-6 h-6 cursor-pointer bg-lightBlue-100">
             {isAgeVerificationChecked && (
               <img
                 src={checkmark}
@@ -64,7 +64,7 @@ export default function StartCheckoutButton() {
             )}
           </span>
           <label
-            className="text-lightBlue800 pl-2 text-xs self-center"
+            className="text-lightBlue-800 pl-2 text-xs self-center"
             htmlFor="checkbox"
           >
             Also update my profile with the age verification

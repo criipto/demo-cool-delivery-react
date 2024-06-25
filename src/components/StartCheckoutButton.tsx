@@ -44,10 +44,10 @@ export default function StartCheckoutButton() {
             aria-hidden="true"
           />
           <div className="mt-3 text-ledt sm:mt-5">
-            <h3 className="font-semibold leading-6 text-base900DarkPurple text-xl pt-6">Your age has been verified</h3>
+            <h3 className="font-semibold leading-6 text-deepPurple-900 text-xl pt-6">Your age has been verified</h3>
             {ageVerificationFailed && (
               <div className="mt-2">
-                <p className="text-sm text-lightBlue700">
+                <p className="text-sm text-lightBlue-700">
                   Thank you for providing your information. Unfortunately, we cannot proceed with your order as you do not meet the legal age requirements for purchasing alcohol in your country. If you have any questions or concerns, please contact
                   our support team. We appreciate your understanding and commitment to responsible consumption.
                 </p>
@@ -55,7 +55,7 @@ export default function StartCheckoutButton() {
             )}
             {isAgeVerificationChecked && !ageVerificationFailed && (
               <div className="mt-2">
-                <p className="text-sm text-lightBlue700">And your profile has been updated.</p>
+                <p className="text-sm text-lightBlue-700">And your profile has been updated.</p>
               </div>
             )}
           </div>
@@ -76,7 +76,7 @@ export default function StartCheckoutButton() {
       <Link to={'/'}>
         <div
           onClick={() => result && handleLogout()}
-          className="back-button flex flex-row text-lightBlue800 h-12 items-center justify-center bg-white py-2 text-sm shadow-sm mx-4 border-lightBlue700/30 border"
+          className="back-button flex flex-row text-lightBlue-800 h-12 items-center justify-center bg-white py-2 text-sm shadow-sm mx-4 border-lightBlue-700/30 border"
         >
           <img
             src={boxIcon}

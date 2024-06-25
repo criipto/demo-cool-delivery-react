@@ -19,7 +19,7 @@ export default function QuantityControlButton(props: QuantityControlProps) {
           <button
             onClick={() => increaseCartQuantity(id)}
             type="button"
-            className="rounded-full bg-primary600 p-3 text-white shadow-sm"
+            className="rounded-full bg-primary-600 p-3 text-white shadow-sm"
           >
             <img
               src={plusIcon}
@@ -29,7 +29,7 @@ export default function QuantityControlButton(props: QuantityControlProps) {
           </button>
         </div>
       ) : (
-        <div className="rounded-full bg-primary600 p-2 text-white shadow-sm hover:bg-primary700 ">
+        <div className="rounded-full bg-primary-600 p-2 text-white shadow-sm hover:bg-primary-700">
           <div className="flex items-center justify-around w-[109px] h-6 p-0 m-0 text-sm">
             <button
               className="py-2"
