@@ -1,7 +1,7 @@
 import logo from '../assets/logos/logo.png';
 import search from '../assets/search.png';
 import profile from '../assets/profile.png';
-import ToggleEnvironmetnModal from './ToggleEnvironmetnModal';
+import { ToggleEnvironmentModal } from './ToggleEnvironmentModal';
 import { EnvProps } from 'types';
 
 export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
@@ -20,7 +20,7 @@ export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
           src={profile}
           className="w-5 h-[19px]"
         />
-        <ToggleEnvironmetnModal
+        <ToggleEnvironmentModal
           onToggleEnv={onToggleEnv}
           currentEnvironment={currentEnvironment}
         />
