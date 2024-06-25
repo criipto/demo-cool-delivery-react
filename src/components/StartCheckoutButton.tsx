@@ -1,10 +1,9 @@
-import boxIcon from '../assets/box-checkout-blue.png';
-import arrow from '../assets/arrow-white.png';
-import checkMark from '../assets/checkmark.png';
 import { Link } from 'react-router-dom';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faBoxOpenFull, faCheck } from '@fortawesome/sharp-light-svg-icons';
 
 export default function StartCheckoutButton() {
   const { isCartEmpty, isAgeVerificationChecked } = useShoppingCart();
@@ -39,11 +38,7 @@ export default function StartCheckoutButton() {
     <div className="fixed bottom-0 w-full lg:max-w-5xl flex flex-col bg-white px-8 py-6 shadow-inner bg-gray-300 gap-2">
       {claims && (
         <div className="flex flex-col items-start content-start justify-start pt-4 pb-6">
-          <img
-            src={checkMark}
-            className="h-5 w-6"
-            aria-hidden="true"
-          />
+          <FontAwesomeIcon icon={faCheck} className="h-7 text-primary-600 " />
           <div className="mt-3 text-ledt sm:mt-5">
             <h3 className="font-semibold leading-6 text-deep-purple-900 text-xl pt-6">Your age has been verified</h3>
             {ageVerificationFailed && (
@@ -65,19 +60,13 @@ export default function StartCheckoutButton() {
       <Link to="checkout" tabIndex={-1}>
         <Button variant="primary" disabled={isCartEmpty}>
           Checkout
-          <img
-            src={arrow}
-            className="w-[14px] h-4 ml-2"
-          />
+          <FontAwesomeIcon className="h-4 ml-2" icon={faArrowRight}/>
         </Button>
       </Link>
       <Link to="/" tabIndex={-1}>
         <Button variant="default" onClick={() => result && handleLogout()}>
-          <img
-            src={boxIcon}
-            className="w-5 h-4 mr-[6px]"
-          />
-          <p className="font-semibold">Continue Shopping</p>
+          <FontAwesomeIcon icon={faBoxOpenFull} className="w-5 h-5 mr-2"/>
+          Continue Shopping
         </Button>
       </Link>
     </div>

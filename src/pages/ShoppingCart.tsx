@@ -3,8 +3,9 @@ import { useLocation } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import StartCheckoutButton from '../components/StartCheckoutButton';
 import AgeVerificationButtons from '../components/AgeVerificationButtons';
-import boxIcon from '../assets/box-open-full-solid.png';
-import boxOutlineIcon from '../assets/box-open-full.png';
+import { faBoxOpenFull as faBoxOpenFullSolid } from '@fortawesome/sharp-solid-svg-icons';
+import { faBoxOpenFull as faBoxOpenFullThin } from '@fortawesome/sharp-thin-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ShoppingCart() {
   const location = useLocation();
@@ -16,10 +17,7 @@ export default function ShoppingCart() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-white h-[98px] flex flex-col items-center justify-center">
-        <img
-          src={boxIcon}
-          className="h-5 w-[25px]"
-        />
+        <FontAwesomeIcon className="h-5 text-primary-600" icon={faBoxOpenFullSolid} />
         <h1 className="font-bold">Your Order</h1>
       </header>
       {cartItems.length > 0 ? (
@@ -33,10 +31,7 @@ export default function ShoppingCart() {
         </div>
       ) : (
         <div className="flex flex-col justify-center items-center content-center flex-grow">
-          <img
-            src={boxOutlineIcon}
-            className="h-16 w-20"
-          />
+          <FontAwesomeIcon className="h-16 text-primary-600" icon={faBoxOpenFullThin} />
           <p className="text-center font-medium text-md pt-4">
             Nothing in your cart yet? <br /> Explore our products and pick your favorites.
           </p>

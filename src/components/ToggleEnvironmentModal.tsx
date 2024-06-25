@@ -1,7 +1,8 @@
-import { Fragment, useState } from 'react';
-import { Button, Dialog, DialogBody, Switch } from '@material-tailwind/react';
-import gear from '../assets/gear-icon.png';
+import { useState } from 'react';
+import { Dialog, DialogBody, Switch } from '@material-tailwind/react';
 import { EnvProps } from 'types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGear } from '@fortawesome/sharp-light-svg-icons';
 
 export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvProps) {
   const [open, setOpen] = useState(false);
@@ -9,17 +10,13 @@ export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvP
   const handleOpen = () => setOpen(!open);
 
   return (
-    <Fragment>
-      <Button
+    <>
+      <button
         onClick={handleOpen}
-        className="bg-primary-25 shadow-none p-0 hover:shadow-none"
+        className="bg-primary-25 shadow-none p-0 hover:shadow-none flex items-center justify-center"
       >
-        <img
-          src={gear}
-          alt="Gear icon"
-          className="my-1 w-[18px] h-[18px]"
-        />
-      </Button>
+        <FontAwesomeIcon icon={faGear} className="text-light-blue-800 h-6 w-6"/>
+      </button>
       <Dialog
         open={open}
         handler={handleOpen}
@@ -34,6 +31,6 @@ export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvP
           />
         </DialogBody>
       </Dialog>
-    </Fragment>
+    </>
   );
 }

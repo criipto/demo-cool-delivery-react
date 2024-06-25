@@ -1,12 +1,11 @@
 import classNames from 'classnames';
-import { ButtonHTMLAttributes, ComponentType, ReactElement } from 'react';
+import { ButtonHTMLAttributes, ReactElement } from 'react';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon?: ComponentType<{className?: string;}>;
   variant: 'primary' | 'default';
 };
 
-export function Button({variant, children, icon: Icon, disabled, className, ...rest}: ButtonProps): ReactElement {
+export function Button({variant, children, disabled, className, ...rest}: ButtonProps): ReactElement {
   return (
     <button
       {...rest}
@@ -26,7 +25,6 @@ export function Button({variant, children, icon: Icon, disabled, className, ...r
       }, className)}
     >
       {children}
-      {Icon && <Icon className="w-[14px] h-4 ml-2"/>}
     </button>
   )
 }
