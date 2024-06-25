@@ -21,11 +21,11 @@ export function Checkbox({ children, checked, onToggle, className}: CheckboxProp
           disabled={true}
           className="hidden"
       />
-      <span className="block w-6 h-6 cursor-pointer p-[2px] border-2 border border-lightBlue-300">
+      <span className="block w-6 h-6 cursor-pointer p-[2px] border-2 border border-light-blue-300">
         {checked && <div className="w-full h-full bg-primary-500"></div>}
       </span>
       <label
-        className="text-lightBlue-800 pl-2 text-xs self-center"
+        className="text-light-blue-800 pl-2 text-xs self-center"
         htmlFor="checkbox"
       >
         {children}

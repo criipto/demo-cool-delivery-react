@@ -20,9 +20,9 @@ export function Button({variant, children, icon: Icon, disabled, className, ...r
         'bg-primary-600 hover:bg-primary-700': variant === 'primary' && !disabled,
 
         // Default
-        'border border-lightBlue-700/30': variant === 'default',
-        'bg-lightBlue-50 text-lightBlue-700': variant === 'default' && disabled,
-        'bg-white text-lightBlue-800 hover:bg-lightBlue-50': variant === 'default' && !disabled,
+        'border border-light-blue-700/30': variant === 'default',
+        'bg-light-blue-50 text-light-blue-700': variant === 'default' && disabled,
+        'bg-white text-light-blue-800 hover:bg-light-blue-50': variant === 'default' && !disabled,
       }, className)}
     >
       {children}

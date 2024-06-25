@@ -18,9 +18,9 @@ export default function StartCheckoutButton() {
           aria-hidden="true"
         />
         <div>
-          <h3 className="font-semibold leading-6 text-deepPurple-900 text-xl pt-6">Age restricted items</h3>
+          <h3 className="font-semibold leading-6 text-deep-purple-900 text-xl pt-6">Age restricted items</h3>
           <div className="mt-2">
-            <p className="text-sm text-lightBlue-700">Your order contains age-restricted items or items that require proof of identity. Please confirm that you are legally eligible to buy these items in your country.</p>
+            <p className="text-sm text-light-blue-700">Your order contains age-restricted items or items that require proof of identity. Please confirm that you are legally eligible to buy these items in your country.</p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function StartCheckoutButton() {
         <Link to="/cart" tabIndex={-1}>
           <Button variant="default">Cancel</Button>
         </Link>
-        <Checkbox className="border border-lightBlue-100" checked={isAgeVerificationChecked}  onToggle={onToggle}>
+        <Checkbox className="border border-light-blue-100" checked={isAgeVerificationChecked}  onToggle={onToggle}>
           Also update my profile with the age verification
         </Checkbox>
       </div>

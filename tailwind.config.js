@@ -20,7 +20,7 @@ export default withMT({
           800: '#382AAD',
           900: '#271D7B',
         },
-        lightBlue: {
+        ['light-blue']: {
           25: '#F7F7FF',
           50: '#EDEEFB',
           100: '#DDDFF3',
@@ -33,7 +33,7 @@ export default withMT({
           800: '#424974',
           900: '#262E52',
         },
-        deepPurple: {
+        ['deep-purple']: {
           25: '#F8F8F9',
           50: '#EFEEF1',
           100: '#E2DFE5',

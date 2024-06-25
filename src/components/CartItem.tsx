@@ -22,7 +22,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
             <h1 className="font-bold text-[15px]">
               {item!.volume} {item!.name}
             </h1>
-            <p className="text-lightBlue-800 text-sm">{item!.abv}</p>
+            <p className="text-light-blue-800 text-sm">{item!.abv}</p>
           </div>
           <p className="font-medium text-[15px]">{totalItemPrice(item!.price, quantity)},00 kr</p>
         </div>

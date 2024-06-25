@@ -16,7 +16,7 @@ export default function ProductCard(props: ProductCardProps) {
             <h1 className="font-bold text-[15px]">
               {volume} {name}
             </h1>
-            <p className="text-lightBlue-800 text-sm">{abv}</p>
+            <p className="text-light-blue-800 text-sm">{abv}</p>
           </div>
           <p className="font-medium text-[15px]">{price},00 kr</p>
         </div>
