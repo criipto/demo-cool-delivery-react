@@ -11,7 +11,7 @@ export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
         src={logo}
         className="h-11"
       />
-      <div className="flex flex-row items-center gap-2">
+      <div className="flex flex-row items-center gap-4">
         <FontAwesomeIcon icon={faMagnifyingGlass} className="w-6 h-6 text-light-blue-800"/>
         <FontAwesomeIcon icon={faUser} className="w-6 h-6 text-light-blue-800"/>
         <ToggleEnvironmentModal
