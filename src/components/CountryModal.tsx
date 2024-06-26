@@ -34,7 +34,7 @@ export function CountryModal(): ReactElement {
         {country && <Flag className="h-6 w-6" country={country} />}
       </Button>
       <Dialog
-        size="sm"
+        size="xs"
         open={open}
         handler={handleOpen}
         className="rounded-none"
