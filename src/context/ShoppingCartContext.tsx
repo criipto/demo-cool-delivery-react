@@ -31,14 +31,20 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>('shopping-cart', []);
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    'shopping-cart',
+    [],
+  );
 
   const cartTotal = cartItems.reduce((total, cartItem) => {
     const item = productsData.beers.find((i) => i.id === cartItem.id);
     return total + (item?.price || 0) * cartItem.quantity;
   }, 0);
 
-  const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0,
+  );
 
   const isCartEmpty = cartItems.length === 0;
 
@@ -85,14 +91,28 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   }
 
   // Update profile toggle
-  const [isAgeVerificationChecked, setIsAgeVerificationChecked] = useLocalStorage<boolean>('isAgeVerificationChecked', true);
+  const [isAgeVerificationChecked, setIsAgeVerificationChecked] =
+    useLocalStorage<boolean>('isAgeVerificationChecked', true);
 
   const handleToggle = () => {
     setIsAgeVerificationChecked((prevIsChecked) => !prevIsChecked);
   };
 
   return (
-    <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, cartQuantity, cartItems, cartTotal, isCartEmpty, isAgeVerificationChecked, onToggle: handleToggle }}>
+    <ShoppingCartContext.Provider
+      value={{
+        getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart,
+        cartQuantity,
+        cartItems,
+        cartTotal,
+        isCartEmpty,
+        isAgeVerificationChecked,
+        onToggle: handleToggle,
+      }}
+    >
       {children}
     </ShoppingCartContext.Provider>
   );

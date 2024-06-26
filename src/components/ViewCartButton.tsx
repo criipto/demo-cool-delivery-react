@@ -8,9 +8,13 @@ export default function ViewCartButton() {
 
   return (
     <div className="fixed bottom-0 w-full lg:max-w-5xl">
-      <div className="flex flex-col bg-white justify-center pb-8 pt-4 px-4">
+      <div className="flex flex-col justify-center bg-white px-4 pb-8 pt-4">
         <Link to="/cart" tabIndex={-1}>
-          <Button variant="primary" disabled={isCartEmpty} className="justify-between">
+          <Button
+            variant="primary"
+            disabled={isCartEmpty}
+            className="justify-between"
+          >
             <div className="flex font-semibold">
               <BoxOpenFullIcon className="h-5" />
               <p className="pl-2">{cartQuantity}</p>

@@ -3,7 +3,10 @@ import { Dialog, DialogBody, Switch } from '@material-tailwind/react';
 import { EnvProps } from 'types';
 import { GearIcon } from './Icon';
 
-export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvProps) {
+export function ToggleEnvironmentModal({
+  onToggleEnv,
+  currentEnvironment,
+}: EnvProps) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -12,14 +15,11 @@ export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvP
     <>
       <button
         onClick={handleOpen}
-        className="bg-primary-25 shadow-none p-0 hover:shadow-none flex items-center justify-center"
+        className="flex items-center justify-center bg-primary-25 p-0 shadow-none hover:shadow-none"
       >
-        <GearIcon className="text-light-blue-800 h-6 w-6"/>
+        <GearIcon className="h-6 w-6 text-light-blue-800" />
       </button>
-      <Dialog
-        open={open}
-        handler={handleOpen}
-      >
+      <Dialog open={open} handler={handleOpen}>
         <DialogBody>
           <Switch
             id="env-toggle"

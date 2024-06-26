@@ -12,13 +12,10 @@ export default function ProductList(props: ProductListProps) {
   const { isCartEmpty } = useShoppingCart();
   return (
     <div>
-      <h1 className="font-bold text-xl p-4 py-6 text-deep-purple-900">Beer</h1>
-      <div className="flex flex-col overflow-y-auto px-4 pb-24 lg:px-0 mt-2 gap-y-2">
+      <h1 className="p-4 py-6 text-xl font-bold text-deep-purple-900">Beer</h1>
+      <div className="mt-2 flex flex-col gap-y-2 overflow-y-auto px-4 pb-24 lg:px-0">
         {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-          />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
       {!isCartEmpty && <ViewCartButton />}

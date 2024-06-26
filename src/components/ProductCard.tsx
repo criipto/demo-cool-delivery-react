@@ -10,19 +10,19 @@ export default function ProductCard(props: ProductCardProps) {
 
   return (
     <>
-      <div className="relative bg-primary-25 flex justify-between items-center h-[124px]">
+      <div className="relative flex h-[124px] items-center justify-between bg-primary-25">
         <div className="p-3">
           <div className="pb-3">
-            <h1 className="font-bold text-[15px]">
+            <h1 className="text-[15px] font-bold">
               {volume} {name}
             </h1>
-            <p className="text-light-blue-800 text-sm">{abv}</p>
+            <p className="text-sm text-light-blue-800">{abv}</p>
           </div>
-          <p className="font-medium text-[15px]">{price},00 kr</p>
+          <p className="text-[15px] font-medium">{price},00 kr</p>
         </div>
         <img
           src={`/products/${image}`}
-          className="max-h-[100px] py-3 pr-4 mr-8"
+          className="mr-8 max-h-[100px] py-3 pr-4"
         />
         <QuantityControlButton id={id} />
       </div>
