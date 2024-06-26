@@ -1,8 +1,7 @@
 import { useShoppingCart } from 'context/ShoppingCartContext';
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBoxOpenFull } from '@fortawesome/sharp-light-svg-icons';
+import { BoxOpenFullIcon } from './Icon';
 
 export default function ViewCartButton() {
   const { cartTotal, cartQuantity, isCartEmpty } = useShoppingCart();
@@ -13,7 +12,7 @@ export default function ViewCartButton() {
         <Link to="/cart" tabIndex={-1}>
           <Button variant="primary" disabled={isCartEmpty} className="justify-between">
             <div className="flex font-semibold">
-              <FontAwesomeIcon className="h-5" icon={faBoxOpenFull} />
+              <BoxOpenFullIcon className="h-5" />
               <p className="pl-2">{cartQuantity}</p>
             </div>
             <p className="font-medium">View your cart</p>

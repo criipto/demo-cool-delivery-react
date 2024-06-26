@@ -1,7 +1,6 @@
 import { useShoppingCart } from 'context/ShoppingCartContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus, faTrash } from '@fortawesome/sharp-light-svg-icons';
 import classNames from 'classnames';
+import { MinusIcon, PlusIcon, TrashIcon } from './Icon';
 
 interface QuantityControlProps {
   id: number;
@@ -25,22 +24,17 @@ export default function QuantityControlButton(props: QuantityControlProps) {
               >
                 {quantity > 1 ? (
                   <>
-                    <FontAwesomeIcon icon={faMinus} className="h-4 w-4 text-white"/>
+                    <MinusIcon className="h-4 w-4 text-white"/>
                   </>
                 ) : (
-                  <FontAwesomeIcon icon={faTrash} className="h-4 w-4 text-white"/>
+                  <TrashIcon className="h-4 w-4 text-white"/>
                 )}
               </button>
               <p className="p-0 m-0 text-xs font-semibold">{quantity}</p>
             </>
           )}
           <button className="p-3" onClick={() => increaseCartQuantity(id)}>
-            {/* <img
-              src={plusIcon}
-              alt="Plus Icon"
-              className="h-4 w-4"
-            /> */}
-            <FontAwesomeIcon icon={faPlus} className="w-4 h-4"/>
+            <PlusIcon className="w-4 h-4"/>
           </button>
       </div>
     </div>

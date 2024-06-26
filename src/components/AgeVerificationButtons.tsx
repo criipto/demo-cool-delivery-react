@@ -3,8 +3,7 @@ import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
 import { Checkbox } from './Checkbox';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChildren } from '@fortawesome/sharp-light-svg-icons';
+import { ChildrenIcon } from './Icon';
 
 export default function StartCheckoutButton() {
   const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
@@ -13,7 +12,7 @@ export default function StartCheckoutButton() {
   return (
     <div className="fixed bottom-0 w-full lg:max-w-5xl bg-white p-4 bg-white py-6 shadow-inner bg-gray-300">
       <div className="flex flex-col items-start content-start justify-start pt-4 mx-4">
-        <FontAwesomeIcon className="h-6 text-primary-500" icon={faChildren} />
+        <ChildrenIcon className="h-6 text-primary-500" />
         <div>
           <h3 className="font-semibold leading-6 text-deep-purple-900 text-xl pt-6">Age restricted items</h3>
           <div className="mt-2">

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Dialog, DialogBody, Switch } from '@material-tailwind/react';
 import { EnvProps } from 'types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGear } from '@fortawesome/sharp-light-svg-icons';
+import { GearIcon } from './Icon';
 
 export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvProps) {
   const [open, setOpen] = useState(false);
@@ -15,7 +14,7 @@ export function ToggleEnvironmentModal({ onToggleEnv, currentEnvironment }: EnvP
         onClick={handleOpen}
         className="bg-primary-25 shadow-none p-0 hover:shadow-none flex items-center justify-center"
       >
-        <FontAwesomeIcon icon={faGear} className="text-light-blue-800 h-6 w-6"/>
+        <GearIcon className="text-light-blue-800 h-6 w-6"/>
       </button>
       <Dialog
         open={open}

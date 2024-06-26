@@ -1,19 +1,15 @@
-import logo from '../assets/logo.png';
 import { ToggleEnvironmentModal } from './ToggleEnvironmentModal';
 import { EnvProps } from 'types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faUser } from '@fortawesome/sharp-light-svg-icons';
+import { SearchIcon, UserIcon } from './Icon';
+import { Logo } from './Logo';
 
 export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
   return (
-    <header className="bg-primary-25 flex flex-row justify-between px-4 pt-3 pb-2">
-      <img
-        src={logo}
-        className="h-11"
-      />
+    <header className="bg-primary-25 flex items-center flex-row justify-between px-4 pt-4">
+      <Logo/>
       <div className="flex flex-row items-center gap-4">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="w-6 h-6 text-light-blue-800"/>
-        <FontAwesomeIcon icon={faUser} className="w-6 h-6 text-light-blue-800"/>
+        <SearchIcon className="w-6 h-6 text-light-blue-800"/>
+        <UserIcon className="w-6 h-6 text-light-blue-800"/>
         <ToggleEnvironmentModal
           onToggleEnv={onToggleEnv}
           currentEnvironment={currentEnvironment}
