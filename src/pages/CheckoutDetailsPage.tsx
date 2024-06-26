@@ -4,33 +4,36 @@ import visaLogo from '../assets/visa.svg';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { ActionsFooter } from '../components/ActionsFooter';
 
 export function CheckoutDetailsPage(): ReactElement {
   return (
-    <div className="flex min-h-screen flex-col px-5">
-      <header className="flex h-[98px] flex-col items-center justify-center bg-white">
-        <BoxOpenFullIcon className="h-5 text-primary-600" />
-        <h1 className="font-bold">Delivery and payment</h1>
-      </header>
-      <main className="flex flex-col gap-4">
-        <ContentButton title="Saved delivery and payment info" selected>
-          <div className="text-sm">
-            <div className="mb-2">
-              <p>Anders Andersen</p>
-              <p>Lykkevej 7</p>
-              <p>2000 Frederiksberg C</p>
-              <p>Danmark</p>
+    <div className="flex min-h-screen flex-col items-center px-5">
+      <div className="flex w-full flex-col">
+        <header className="flex h-[98px] flex-col items-center justify-center bg-white">
+          <BoxOpenFullIcon className="h-5 text-primary-600" />
+          <h1 className="font-bold">Delivery and payment</h1>
+        </header>
+        <main className="flex flex-col gap-4">
+          <ContentButton title="Saved delivery and payment info" selected>
+            <div className="text-sm">
+              <div className="mb-2">
+                <p>Anders Andersen</p>
+                <p>Lykkevej 7</p>
+                <p>2000 Frederiksberg C</p>
+                <p>Danmark</p>
+              </div>
+              <div className="flex gap-2">
+                <img src={visaLogo} />
+                <p>•••• •••• •••• 1234</p>
+              </div>
             </div>
-            <div className="flex gap-2">
-              <img src={visaLogo} />
-              <p>•••• •••• •••• 1234</p>
-            </div>
-          </div>
-        </ContentButton>
-        <ContentButton title="New delivery of payment info" />
-      </main>
+          </ContentButton>
+          <ContentButton title="New delivery of payment info" />
+        </main>
+      </div>
 
-      <div className="fixed bottom-0 flex w-full flex-col gap-2 bg-gray-300 bg-white px-8 py-6 shadow-inner lg:max-w-5xl">
+      <ActionsFooter className="px-8 py-6">
         <Link to="/checkout/completed" tabIndex={-1}>
           <Button variant="primary">
             Complete order
@@ -40,7 +43,7 @@ export function CheckoutDetailsPage(): ReactElement {
         <Link to="/" tabIndex={-1}>
           <Button variant="default">Cancel</Button>
         </Link>
-      </div>
+      </ActionsFooter>
     </div>
   );
 }

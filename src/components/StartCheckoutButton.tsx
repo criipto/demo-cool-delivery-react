@@ -3,6 +3,7 @@ import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
 import { ArrowRightIcon, BoxOpenFullIcon, CheckIcon } from './Icon';
+import { ActionsFooter } from './ActionsFooter';
 
 export default function StartCheckoutButton() {
   const { isCartEmpty, isAgeVerificationChecked, clearCart } =
@@ -55,7 +56,7 @@ export default function StartCheckoutButton() {
     !isAbove18Finland;
 
   return (
-    <div className="fixed bottom-0 flex w-full flex-col gap-2 bg-gray-300 bg-white px-8 py-6 shadow-inner lg:max-w-5xl">
+    <ActionsFooter className="px-8 py-6">
       {claims && (
         <div className="flex flex-col content-start items-start justify-start pb-6 pt-4">
           <CheckIcon className="h-5 text-primary-600" />
@@ -105,6 +106,6 @@ export default function StartCheckoutButton() {
           Continue Shopping
         </Button>
       </Link>
-    </div>
+    </ActionsFooter>
   );
 }
