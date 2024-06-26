@@ -4,10 +4,12 @@ import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
 import { Checkbox } from './Checkbox';
 import { ChildrenIcon } from './Icon';
+import { useCountry } from '../context/CountryContext';
 
 export default function StartCheckoutButton() {
   const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
   const { loginWithRedirect } = useCriiptoVerify();
+  const { country } = useCountry();
 
   return (
     <div className="fixed bottom-0 w-full bg-gray-300 bg-white p-4 py-6 shadow-inner lg:max-w-5xl">
@@ -35,7 +37,9 @@ export default function StartCheckoutButton() {
             if (isCartEmpty) {
               e.preventDefault();
             } else {
-              loginWithRedirect();
+              loginWithRedirect({
+                loginHint: country != null ? `country:${country}` : undefined,
+              });
             }
           }}
         >
