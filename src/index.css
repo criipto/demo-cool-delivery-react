@@ -15,35 +15,3 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-.selected-category {
-  color: #604fed;
-  border-bottom: 4px solid #604fed;
-  padding-bottom: 2px; /* Space between text and underline */
-  display: inline-block;
-}
-
-.cta-button-active {
-  background-color: #604fed;
-  color: #fff;
-  transition: all 200ms ease-in-out;
-}
-
-.cta-button-active:hover {
-  background-color: #5648ce;
-}
-
-.cta-button-disabled {
-  background-color: #8b94a6;
-  color: #fff;
-  cursor: not-allowed;
-}
-
-.back-button {
-  background-color: #fff;
-  transition: all 200ms ease-in-out;
-}
-
-.back-button:hover {
-  background-color: #ecedf8; /* Lightblue50*/
-}

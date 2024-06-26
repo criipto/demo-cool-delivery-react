@@ -1,26 +1,16 @@
-import logo from '../assets/logos/logo.png';
-import search from '../assets/search.png';
-import profile from '../assets/profile.png';
-import ToggleEnvironmetnModal from './ToggleEnvironmetnModal';
+import { ToggleEnvironmentModal } from './ToggleEnvironmentModal';
 import { EnvProps } from 'types';
+import { SearchIcon, UserIcon } from './Icon';
+import { Logo } from './Logo';
 
 export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
   return (
-    <header className="bg-primary25 flex flex-row justify-between px-4 pt-3 pb-2">
-      <img
-        src={logo}
-        className="h-11"
-      />
-      <div className="flex flex-row items-center">
-        <img
-          src={search}
-          className="w-5 h-[19px]"
-        />
-        <img
-          src={profile}
-          className="w-5 h-[19px]"
-        />
-        <ToggleEnvironmetnModal
+    <header className="bg-primary-25 flex items-center flex-row justify-between px-4 pt-4">
+      <Logo/>
+      <div className="flex flex-row items-center gap-4">
+        <SearchIcon className="w-6 h-6 text-light-blue-800"/>
+        <UserIcon className="w-6 h-6 text-light-blue-800"/>
+        <ToggleEnvironmentModal
           onToggleEnv={onToggleEnv}
           currentEnvironment={currentEnvironment}
         />
