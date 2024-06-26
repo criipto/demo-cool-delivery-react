@@ -14,7 +14,7 @@ export function CheckoutCompletedPage(): ReactElement {
           <br />
           We have received your order
         </h1>
-        <p className="max-w-lg">
+        <p className="max-w-lg text-sm text-light-blue-800">
           An order confirmation has been sent to your email. Check your spam
           folder if you haven't received it within 2 min. Your goods will be
           delivered within 24 hours.
