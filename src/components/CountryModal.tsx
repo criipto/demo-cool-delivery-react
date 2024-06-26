@@ -38,6 +38,8 @@ export function CountryModal(): ReactElement {
         open={open}
         handler={handleOpen}
         className="rounded-none"
+        // Only allow the user to close the modal if a country has been selected
+        dismiss={{ enabled: country != null }}
       >
         <DialogBody className="flex flex-col items-center gap-4 p-5 pt-6">
           <div className="flex flex-col items-center text-center">
