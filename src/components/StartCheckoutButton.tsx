@@ -5,7 +5,8 @@ import { Button } from './Button';
 import { ArrowRightIcon, BoxOpenFullIcon, CheckIcon } from './Icon';
 
 export default function StartCheckoutButton() {
-  const { isCartEmpty, isAgeVerificationChecked } = useShoppingCart();
+  const { isCartEmpty, isAgeVerificationChecked, clearCart } =
+    useShoppingCart();
   const { result, claims, logout } = useCriiptoVerify();
   const handleLogout = () => {
     logout({ redirectUri: window.location.origin + '/' });
@@ -84,7 +85,15 @@ export default function StartCheckoutButton() {
           </div>
         </div>
       )}
-      <Link to="checkout" tabIndex={-1}>
+      <Link
+        to={claims != null ? '/checkout/details' : '/cart/checkout'}
+        tabIndex={-1}
+        onClick={() => {
+          if (claims != null) {
+            clearCart();
+          }
+        }}
+      >
         <Button variant="primary" disabled={isCartEmpty}>
           Checkout
           <ArrowRightIcon className="ml-2 h-4" />
