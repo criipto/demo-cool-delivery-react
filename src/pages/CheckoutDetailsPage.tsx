@@ -21,6 +21,7 @@ export function CheckoutDetailsPage(): ReactElement {
                 <p>Anders Andersen</p>
                 <p>Lykkevej 7</p>
                 <p>2000 Frederiksberg C</p>
+                {/* TODO: Show the user's selected country here once country selector is implemented (Maybe also make country specific adresses if not out of scope)*/}
                 <p>Danmark</p>
               </div>
               <div className="flex gap-2">
