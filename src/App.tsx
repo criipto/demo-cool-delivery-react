@@ -12,7 +12,7 @@ interface AppProps {
 function App({ onToggleEnv, currentEnvironment }: AppProps) {
   return (
     <ShoppingCartProvider>
-      <div className="min-h-screen lg:max-w-5xl mx-auto">
+      <div className="mx-auto min-h-screen lg:max-w-5xl">
         <Routes>
           <Route
             path="/"
@@ -23,18 +23,9 @@ function App({ onToggleEnv, currentEnvironment }: AppProps) {
               />
             }
           />
-          <Route
-            path="/cart"
-            element={<ShoppingCart />}
-          />
-          <Route
-            path="/cart/checkout"
-            element={<ShoppingCart />}
-          />
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
+          <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/cart/checkout" element={<ShoppingCart />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </ShoppingCartProvider>
