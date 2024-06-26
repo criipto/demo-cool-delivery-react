@@ -2,6 +2,7 @@ import { ToggleEnvironmentModal } from './ToggleEnvironmentModal';
 import { EnvProps } from 'types';
 import { SearchIcon, UserIcon } from './Icon';
 import { Logo } from './Logo';
+import { CountryModal } from './CountryModal';
 
 export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
   return (
@@ -14,6 +15,7 @@ export default function Header({ onToggleEnv, currentEnvironment }: EnvProps) {
           onToggleEnv={onToggleEnv}
           currentEnvironment={currentEnvironment}
         />
+        <CountryModal />
       </div>
     </header>
   );
