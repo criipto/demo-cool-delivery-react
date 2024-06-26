@@ -24,7 +24,7 @@ export function BoxOpenFullIcon({className}: IconProps): ReactElement {
 
 export function CheckIcon({className}: IconProps): ReactElement {
   return (
-    <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 25"><path fill-rule="evenodd" clip-rule="evenodd" d="M34.95 4.401 15.147 24.203.81 9.865 4.346 6.33l10.802 10.802L31.413.866 34.949 4.4Z" fill="currentColor" /></svg>
+    <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 25"><path fillRule="evenodd" clipRule="evenodd" d="M34.95 4.401 15.147 24.203.81 9.865 4.346 6.33l10.802 10.802L31.413.866 34.949 4.4Z" fill="currentColor" /></svg>
   );
 }
 
@@ -38,7 +38,7 @@ export function ChildrenIcon({className}: IconProps): ReactElement {
 
 export function GearIcon({className}: IconProps): ReactElement {
   return (
-    <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.24 9.631c.197-.519.468-.989.826-1.464l.392-.495-.175-.62-.675-2.044 2.067-1.184 1.422 1.617.446.465.678-.074a5.1 5.1 0 0 1 1.628.013l.669.067.445-.48 1.433-1.586 2.045 1.215-.69 2.016-.174.64.378.503c.17.218.34.436.495.707.136.237.238.494.34.75l.243.582.64.174 2.088.424.012 2.379-2.092.433-.64.141-.28.611a5.098 5.098 0 0 1-.813 1.41l-.406.549.209.6.622 2.03-2.068 1.184-1.402-1.583-.446-.465-.644.054a4.789 4.789 0 0 1-1.662.007l-.635-.087-.445.48-1.433 1.586-2.08-1.195.691-2.016.174-.64-.378-.503a6.048 6.048 0 0 1-.461-.726c-.136-.238-.272-.475-.374-.732l-.243-.58-.64-.175-2.088-.424.022-2.398 2.092-.434.64-.14.246-.592Zm2.695-7.396L5.14 4.409l.924 3.027c-.392.495-.726 1.091-1.006 1.702L2.014 9.8 2 14.175l3.049.685c.121.29.296.596.451.867.175.305.35.61.539.862l-.952 2.976 3.782 2.2 2.11-2.289c.668.068 1.352.081 1.977-.006l2.124 2.294 3.796-2.174-.938-2.974c.407-.548.726-1.091.987-1.736l3.062-.628L22 9.877l-3.049-.685-.038-.088a7.981 7.981 0 0 0-.399-.832 8.223 8.223 0 0 0-.553-.809l.952-2.976-3.782-2.2-2.11 2.289c-.668-.068-1.318-.1-1.977.006l-2.11-2.347Zm5.855 9.774a2.8 2.8 0 1 1-5.6 0 2.8 2.8 0 0 1 5.6 0Zm1.2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="currentColor"/></svg>
+    <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M6.24 9.631c.197-.519.468-.989.826-1.464l.392-.495-.175-.62-.675-2.044 2.067-1.184 1.422 1.617.446.465.678-.074a5.1 5.1 0 0 1 1.628.013l.669.067.445-.48 1.433-1.586 2.045 1.215-.69 2.016-.174.64.378.503c.17.218.34.436.495.707.136.237.238.494.34.75l.243.582.64.174 2.088.424.012 2.379-2.092.433-.64.141-.28.611a5.098 5.098 0 0 1-.813 1.41l-.406.549.209.6.622 2.03-2.068 1.184-1.402-1.583-.446-.465-.644.054a4.789 4.789 0 0 1-1.662.007l-.635-.087-.445.48-1.433 1.586-2.08-1.195.691-2.016.174-.64-.378-.503a6.048 6.048 0 0 1-.461-.726c-.136-.238-.272-.475-.374-.732l-.243-.58-.64-.175-2.088-.424.022-2.398 2.092-.434.64-.14.246-.592Zm2.695-7.396L5.14 4.409l.924 3.027c-.392.495-.726 1.091-1.006 1.702L2.014 9.8 2 14.175l3.049.685c.121.29.296.596.451.867.175.305.35.61.539.862l-.952 2.976 3.782 2.2 2.11-2.289c.668.068 1.352.081 1.977-.006l2.124 2.294 3.796-2.174-.938-2.974c.407-.548.726-1.091.987-1.736l3.062-.628L22 9.877l-3.049-.685-.038-.088a7.981 7.981 0 0 0-.399-.832 8.223 8.223 0 0 0-.553-.809l.952-2.976-3.782-2.2-2.11 2.289c-.668-.068-1.318-.1-1.977.006l-2.11-2.347Zm5.855 9.774a2.8 2.8 0 1 1-5.6 0 2.8 2.8 0 0 1 5.6 0Zm1.2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="currentColor"/></svg>
   );
 }
 
@@ -53,13 +53,13 @@ export function PlusIcon({className}: IconProps): ReactElement {
 }
 
 export function SearchIcon({className}: IconProps): ReactElement {
-  return <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.726 9.291a6.3 6.3 0 1 1-12.6 0 6.3 6.3 0 0 1 12.6 0Zm-2.328 6.363a7.5 7.5 0 1 1 2.176-2.066l6.5 6.5-2.121 2.121-6.555-6.555Zm1.033-.664.424-.424 5.522 5.522-.424.424-5.522-5.522Z" fill="currentColor"/></svg>;
+  return <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M15.726 9.291a6.3 6.3 0 1 1-12.6 0 6.3 6.3 0 0 1 12.6 0Zm-2.328 6.363a7.5 7.5 0 1 1 2.176-2.066l6.5 6.5-2.121 2.121-6.555-6.555Zm1.033-.664.424-.424 5.522 5.522-.424.424-5.522-5.522Z" fill="currentColor"/></svg>;
 }
 
 export function TrashIcon({className}: IconProps): ReactElement {
-  return <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.958 0h5.87l.672 2H15v1h-1.094L14 16H2l.063-13H1V2h3.469l.49-2Zm.667 2h4.719l-.337-1H5.902l-.277 1ZM3.062 3l-.156 12h10.156l-.156-12H3.062ZM6 13V5h1v8H6Zm3-8v8h1V5H9Z" fill="currentColor"/></svg>;
+  return <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fillRule="evenodd" clipRule="evenodd" d="M4.958 0h5.87l.672 2H15v1h-1.094L14 16H2l.063-13H1V2h3.469l.49-2Zm.667 2h4.719l-.337-1H5.902l-.277 1ZM3.062 3l-.156 12h10.156l-.156-12H3.062ZM6 13V5h1v8H6Zm3-8v8h1V5H9Z" fill="currentColor"/></svg>;
 }
 
 export function UserIcon({className}: IconProps): ReactElement {
-  return <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.082 14.712 5.33 21.95h13.338l-.75-7.238H6.081ZM19 13.512l1 9.638H4l1-9.638h14Zm-7-2.558a3.8 3.8 0 0 0 3.8-3.802 3.8 3.8 0 1 0-3.8 3.802Zm0 1.2a5 5 0 0 0 5-5.002 5 5 0 1 0-5 5.002Z" fill="currentColor"/></svg>;
+  return <svg className={className} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25"><path fillRule="evenodd" clipRule="evenodd" d="M6.082 14.712 5.33 21.95h13.338l-.75-7.238H6.081ZM19 13.512l1 9.638H4l1-9.638h14Zm-7-2.558a3.8 3.8 0 0 0 3.8-3.802 3.8 3.8 0 1 0-3.8 3.802Zm0 1.2a5 5 0 0 0 5-5.002 5 5 0 1 0-5 5.002Z" fill="currentColor"/></svg>;
 }
