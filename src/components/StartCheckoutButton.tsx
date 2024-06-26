@@ -86,20 +86,29 @@ export default function StartCheckoutButton() {
           </div>
         </div>
       )}
-      <Link
-        to={claims != null ? '/checkout/details' : '/cart/checkout'}
-        tabIndex={-1}
-        onClick={() => {
-          if (claims != null) {
+      {claims !== null && (
+        <Button
+          variant="primary"
+          disabled={isCartEmpty}
+          onClick={() => {
             clearCart();
-          }
-        }}
-      >
-        <Button variant="primary" disabled={isCartEmpty}>
+            logout({
+              redirectUri: window.location.origin + '/checkout/details',
+            });
+          }}
+        >
           Checkout
           <ArrowRightIcon className="ml-2 h-4" />
         </Button>
-      </Link>
+      )}
+      {claims === null && (
+        <Link to="/cart/checkout" tabIndex={-1}>
+          <Button variant="primary" disabled={isCartEmpty}>
+            Checkout
+            <ArrowRightIcon className="ml-2 h-4" />
+          </Button>
+        </Link>
+      )}
       <Link to="/" tabIndex={-1}>
         <Button variant="default" onClick={() => result && handleLogout()}>
           <BoxOpenFullIcon className="mr-2 h-5 w-5" />
