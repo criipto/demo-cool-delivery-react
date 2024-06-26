@@ -4,6 +4,7 @@ import ShoppingCart from 'pages/ShoppingCart';
 import NotFound from 'pages/NotFound';
 import { ShoppingCartProvider } from 'context/ShoppingCartContext';
 import { CountryProvider } from './context/CountryContext';
+import { CheckoutDetailsPage } from './pages/CheckoutDetailsPage';
 
 interface AppProps {
   onToggleEnv: () => void;
@@ -27,6 +28,7 @@ function App({ onToggleEnv, currentEnvironment }: AppProps) {
             />
             <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/cart/checkout" element={<ShoppingCart />} />
+            <Route path="/checkout/details" element={<CheckoutDetailsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
