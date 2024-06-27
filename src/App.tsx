@@ -6,6 +6,7 @@ import { ShoppingCartProvider } from 'context/ShoppingCartContext';
 import { CountryProvider } from './context/CountryContext';
 import { CheckoutDetailsPage } from './pages/CheckoutDetailsPage';
 import { CheckoutCompletedPage } from './pages/CheckoutCompletedPage';
+import { CallbackPage } from './pages/CallbackPage';
 
 interface AppProps {
   onToggleEnv: () => void;
@@ -18,6 +19,7 @@ function App({ onToggleEnv, currentEnvironment }: AppProps) {
       <ShoppingCartProvider>
         <div className="mx-auto min-h-screen lg:max-w-5xl">
           <Routes>
+            <Route path="/callback" element={<CallbackPage />} />
             <Route
               path="/"
               element={

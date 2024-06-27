@@ -30,7 +30,7 @@ function CriiptoVerifyProviderWrapper() {
     <CriiptoVerifyProvider
       domain={domain}
       clientID="urn:demos:cool-delivery-react"
-      redirectUri={window.location.origin + '/cart'}
+      redirectUri={`${window.location.origin}/callback?to=${btoa('/invalid_redirect_url')}`}
       sessionStore={window.sessionStorage}
       message="Log in to Cool Delivery"
     >

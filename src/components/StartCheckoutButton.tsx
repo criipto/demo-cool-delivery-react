@@ -9,9 +9,6 @@ export default function StartCheckoutButton() {
   const { isCartEmpty, isAgeVerificationChecked, clearCart } =
     useShoppingCart();
   const { result, claims, logout } = useCriiptoVerify();
-  const handleLogout = () => {
-    logout({ redirectUri: window.location.origin + '/' });
-  };
 
   // Based on birth year, demo only
   function calculateAge(
@@ -93,7 +90,7 @@ export default function StartCheckoutButton() {
           onClick={() => {
             clearCart();
             logout({
-              redirectUri: window.location.origin + '/checkout/details',
+              redirectUri: `${window.location.origin}/callback?to=${btoa('/checkout/details')}`,
             });
           }}
         >
@@ -110,7 +107,16 @@ export default function StartCheckoutButton() {
         </Link>
       )}
       <Link to="/" tabIndex={-1}>
-        <Button variant="default" onClick={() => result && handleLogout()}>
+        <Button
+          variant="default"
+          onClick={() => {
+            if (result) {
+              logout({
+                redirectUri: `${window.location.origin}/callback?to=${btoa('/')}`,
+              });
+            }
+          }}
+        >
           <BoxOpenFullIcon className="mr-2 h-5 w-5" />
           Continue Shopping
         </Button>

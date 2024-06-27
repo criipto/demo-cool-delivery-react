@@ -32,12 +32,10 @@ export default function StartCheckoutButton() {
           variant="primary"
           type="button"
           disabled={isCartEmpty}
-          onClick={(e) => {
-            if (isCartEmpty) {
-              e.preventDefault();
-            } else {
-              loginWithRedirect();
-            }
+          onClick={() => {
+            loginWithRedirect({
+              redirectUri: `${window.location.origin}/callback?to=${btoa('/cart')}`,
+            });
           }}
         >
           Verify your age

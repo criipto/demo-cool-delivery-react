@@ -31,7 +31,11 @@ export function CountryModal(): ReactElement {
         onClick={handleOpen}
         className="bg-primary25 flex items-center gap-0.5 gap-1 rounded-none p-0 text-gray-600 shadow-none hover:shadow-none"
       >
-        {country && <Flag className="h-6 w-6" country={country} />}
+        {country ? (
+          <Flag className="h-6 w-6" country={country} />
+        ) : (
+          <span></span>
+        )}
       </Button>
       <Dialog
         size="xs"
