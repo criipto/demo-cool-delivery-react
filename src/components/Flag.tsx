@@ -25,7 +25,7 @@ export function DkFlag({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Z"
           fill="#F0F0F0"
@@ -54,7 +54,7 @@ export function NoFlag({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 25 24"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           d="M12.5 24c6.627 0 12-5.373 12-12s-5.373-12-12-12S.5 5.373.5 12s5.373 12 12 12Z"
           fill="#F0F0F0"
@@ -87,7 +87,7 @@ export function SeFlag({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 25 24"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           d="M12.5 24c6.627 0 12-5.373 12-12s-5.373-12-12-12S.5 5.373.5 12s5.373 12 12 12Z"
           fill="#FFDA44"
@@ -116,7 +116,7 @@ export function FiFlag({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Z"
           fill="#F0F0F0"

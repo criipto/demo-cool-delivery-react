@@ -4,13 +4,14 @@ import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
 import { Checkbox } from './Checkbox';
 import { ChildrenIcon } from './Icon';
+import { ActionsFooter } from './ActionsFooter';
 
 export default function StartCheckoutButton() {
   const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
   const { loginWithRedirect } = useCriiptoVerify();
 
   return (
-    <div className="fixed bottom-0 w-full bg-gray-300 bg-white p-4 py-6 shadow-inner lg:max-w-5xl">
+    <ActionsFooter>
       <div className="mx-4 flex flex-col content-start items-start justify-start pt-4">
         <ChildrenIcon className="h-6 text-primary-500" />
         <div>
@@ -31,12 +32,11 @@ export default function StartCheckoutButton() {
           variant="primary"
           type="button"
           disabled={isCartEmpty}
-          onClick={(e) => {
-            if (isCartEmpty) {
-              e.preventDefault();
-            } else {
-              loginWithRedirect();
-            }
+          onClick={() => {
+            loginWithRedirect({
+              redirectUri: `${window.location.origin}/callback`,
+              state: btoa('/cart'),
+            });
           }}
         >
           Verify your age
@@ -52,6 +52,6 @@ export default function StartCheckoutButton() {
           Also update my profile with the age verification
         </Checkbox>
       </div>
-    </div>
+    </ActionsFooter>
   );
 }
