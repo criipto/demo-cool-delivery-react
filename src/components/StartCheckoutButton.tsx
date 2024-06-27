@@ -2,7 +2,13 @@ import { Link } from 'react-router-dom';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
-import { ArrowRightIcon, BoxOpenFullIcon, CheckIcon, CrossIcon } from './Icon';
+import {
+  ArrowRightIcon,
+  BoxOpenFullIcon,
+  CheckIcon,
+  CrossIcon,
+  HandIcon,
+} from './Icon';
 import { ActionsFooter } from './ActionsFooter';
 import { useAgeVerification } from '../hooks/useAgeVerification';
 import classNames from 'classnames';
@@ -31,7 +37,7 @@ function AgeVerificationResult(): ReactElement | null {
   const icon = ageVerificationPassed ? (
     <CheckIcon className="h-5 text-primary-600" />
   ) : (
-    <CrossIcon className="h-5 text-error-500" />
+    <HandIcon className="h-6 text-error-500" />
   );
 
   const title = ageVerificationPassed
@@ -45,7 +51,7 @@ function AgeVerificationResult(): ReactElement | null {
         <h3 className="text-dark-purple-900 text-xl font-semibold leading-6">
           {title}
         </h3>
-        <div className="mt-2 text-sm text-light-blue-700">
+        <div className="mt-2 max-w-lg text-sm text-light-blue-700">
           {ageVerificationPassed && (
             <p>
               <span>
@@ -58,13 +64,14 @@ function AgeVerificationResult(): ReactElement | null {
           )}
           {!ageVerificationPassed && (
             <p>
+              <span>Thank you for providing your information.</span>
+              <br />
               <span>
-                Thank you for providing your information. Unfortunately, we
-                cannot proceed with your order as you do not meet the legal age
-                requirements for purchasing alcohol in your country. If you have
-                any questions or concerns, please contact our support team. We
-                appreciate your understanding and commitment to responsible
-                consumption.
+                Unfortunately, we cannot proceed with your order as you do not
+                meet the legal age requirements for purchasing alcohol in your
+                country. If you have any questions or concerns, please contact
+                our support team. We appreciate your understanding and
+                commitment to responsible consumption.
               </span>
             </p>
           )}
