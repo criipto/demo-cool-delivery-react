@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useShoppingCart } from '../context/ShoppingCartContext';
-import { useCriiptoVerify } from '@criipto/verify-react';
 import { Button } from './Button';
 import { Checkbox } from './Checkbox';
 import { ChildrenIcon } from './Icon';
 import { ActionsFooter } from './ActionsFooter';
+import { useAgeVerification } from '../hooks/useAgeVerification';
 
 export default function StartCheckoutButton() {
-  const { isCartEmpty, isAgeVerificationChecked, onToggle } = useShoppingCart();
-  const { loginWithRedirect } = useCriiptoVerify();
+  const { isCartEmpty } = useShoppingCart();
+  const {
+    login,
+    isUpdateAgeVerificationProfileChecked,
+    onUpdateAgeVerificationProfileToggle,
+  } = useAgeVerification();
 
   return (
     <ActionsFooter>
@@ -32,12 +36,7 @@ export default function StartCheckoutButton() {
           variant="primary"
           type="button"
           disabled={isCartEmpty}
-          onClick={() => {
-            loginWithRedirect({
-              redirectUri: `${window.location.origin}/callback`,
-              state: btoa('/cart'),
-            });
-          }}
+          onClick={() => login()}
         >
           Verify your age
         </Button>
@@ -46,8 +45,8 @@ export default function StartCheckoutButton() {
         </Link>
         <Checkbox
           className="border border-light-blue-100"
-          checked={isAgeVerificationChecked}
-          onToggle={onToggle}
+          checked={isUpdateAgeVerificationProfileChecked}
+          onToggle={onUpdateAgeVerificationProfileToggle}
         >
           Also update my profile with the age verification
         </Checkbox>

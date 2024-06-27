@@ -132,6 +132,24 @@ export function PlusIcon({ className }: IconProps): ReactElement {
   );
 }
 
+export function CrossIcon({ className }: IconProps): ReactElement {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="m2.825 4.164 5.527 5.485-5.529 5.527-.177.177.177.177.988.987.176.177.177-.177 5.527-5.527 5.484 5.524.177.178.178-.177.986-.986.177-.177-.177-.177-5.528-5.526 5.528-5.484.178-.177-.177-.177-.986-.988-.178-.177-.177.178L9.69 8.351 4.164 2.823l-.177-.177-.176.177-.987.987-.177.177.178.177Z"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth=".5"
+      />
+    </svg>
+  );
+}
+
 export function SearchIcon({ className }: IconProps): ReactElement {
   return (
     <svg
