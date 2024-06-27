@@ -34,7 +34,8 @@ export default function StartCheckoutButton() {
           disabled={isCartEmpty}
           onClick={() => {
             loginWithRedirect({
-              redirectUri: `${window.location.origin}/callback?to=${btoa('/cart')}`,
+              redirectUri: `${window.location.origin}/callback`,
+              state: btoa('/cart'),
             });
           }}
         >

@@ -13,7 +13,7 @@
     "format:all": "prettier --write \"src/**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
   },
   "dependencies": {
-    "@criipto/verify-react": "^2.0.2",
+    "@criipto/verify-react": "^2.3.0",
     "@fontsource/ibm-plex-sans": "^5.0.18",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",

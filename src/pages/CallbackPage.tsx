@@ -8,9 +8,9 @@ import { Navigate, useSearchParams } from 'react-router-dom';
  */
 export function CallbackPage(): ReactElement {
   const [searchParams] = useSearchParams();
-  const to = searchParams.get('to');
 
-  const path = to ? atob(to) : '/';
+  const state = searchParams.get('state');
+  const path = state ? atob(state) : '/';
 
   return <Navigate to={`${path}?${searchParams}`} />;
 }

@@ -90,7 +90,8 @@ export default function StartCheckoutButton() {
           onClick={() => {
             clearCart();
             logout({
-              redirectUri: `${window.location.origin}/callback?to=${btoa('/checkout/details')}`,
+              redirectUri: `${window.location.origin}/callback`,
+              state: btoa('/checkout/details'),
             });
           }}
         >
@@ -112,7 +113,8 @@ export default function StartCheckoutButton() {
           onClick={() => {
             if (result) {
               logout({
-                redirectUri: `${window.location.origin}/callback?to=${btoa('/')}`,
+                redirectUri: `${window.location.origin}/callback`,
+                state: btoa('/'),
               });
             }
           }}
