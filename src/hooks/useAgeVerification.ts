@@ -5,7 +5,7 @@ import { productsData } from '../products';
 import { useCountry } from '../context/CountryContext';
 import useLocalStorage from './useLocalStorage';
 
-export const ages = [15, 16, 18, 21, 65] as const;
+export const ages = [15, 16, 18, 21] as const;
 export type Age = (typeof ages)[number];
 export type Scope = `is_over_${Age}`;
 
