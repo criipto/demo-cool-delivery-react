@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { ActionsFooter } from '../components/ActionsFooter';
+import { useCountry } from '../context/CountryContext';
+import { match } from 'ts-pattern';
 
 export function CheckoutDetailsPage(): ReactElement {
   return (
@@ -17,13 +19,7 @@ export function CheckoutDetailsPage(): ReactElement {
         <main className="flex flex-col gap-4">
           <ContentButton title="Saved delivery and payment info" selected>
             <div className="text-sm">
-              <div className="mb-2">
-                <p>Anders Andersen</p>
-                <p>Lykkevej 7</p>
-                <p>2000 Frederiksberg C</p>
-                {/* TODO: Show the user's selected country here once country selector is implemented (Maybe also make country specific adresses if not out of scope)*/}
-                <p>Danmark</p>
-              </div>
+              <MockAddress />
               <div className="flex gap-2">
                 <img src={visaLogo} />
                 <p>•••• •••• •••• 1234</p>
@@ -78,4 +74,43 @@ function ContentButton(props: ContentButtonProps): ReactElement {
       </div>
     </button>
   );
+}
+
+function MockAddress(): ReactElement | null {
+  const { country } = useCountry();
+  return match(country)
+    .with('DK', () => (
+      <div className="mb-2">
+        <p>Anders Andersen</p>
+        <p>Lykkevej 7</p>
+        <p>2000 Frederiksberg C</p>
+        <p>Danmark</p>
+      </div>
+    ))
+    .with('SE', () => (
+      <div className="mb-2">
+        <p>Emma Andersson</p>
+        <p>Ekvägen 34</p>
+        <p>72210 Västerås</p>
+        <p>Sverige</p>
+      </div>
+    ))
+    .with('NO', () => (
+      <div className="mb-2">
+        <p>Ingrid Olsen</p>
+        <p>Fjellveien 56</p>
+        <p>3045 Drammen</p>
+        <p>Norge</p>
+      </div>
+    ))
+    .with('FI', () => (
+      <div className="mb-2">
+        <p>Jussi Virtanen</p>
+        <p>Koivukatu 89</p>
+        <p>90100 Oulu</p>
+        <p>Suomi</p>
+      </div>
+    ))
+    .with(null, () => null)
+    .exhaustive();
 }
