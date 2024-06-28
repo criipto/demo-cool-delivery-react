@@ -1,4 +1,5 @@
 import { Product } from '../types';
+import { AbvLabel } from './AbvLabel';
 import QuantityControlButton from './QuantityControlButton';
 
 interface ProductCardProps {
@@ -16,7 +17,9 @@ export default function ProductCard(props: ProductCardProps) {
             <h1 className="text-[15px] font-bold">
               {volume} {name}
             </h1>
-            <p className="text-sm text-light-blue-800">{abv}</p>
+            <p className="text-sm text-light-blue-800">
+              <AbvLabel>{abv}</AbvLabel>
+            </p>
           </div>
           <p className="text-[15px] font-medium">{price},00 kr</p>
         </div>
