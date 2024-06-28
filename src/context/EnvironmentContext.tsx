@@ -1,10 +1,4 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export type Environment = 'test' | 'production';
