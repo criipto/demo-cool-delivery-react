@@ -1,10 +1,18 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { BoxOpenFullIcon, CheckIcon } from '../components/Icon';
 import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
 import { ActionsFooter } from '../components/ActionsFooter';
+import { useShoppingCart } from '../context/ShoppingCartContext';
 
 export function CheckoutCompletedPage(): ReactElement {
+  const { clearCart } = useShoppingCart();
+
+  useEffect(() => {
+    clearCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col items-center px-5 text-center">
       <header className="mt-[15%] flex flex-col items-center justify-center gap-10 bg-white">
