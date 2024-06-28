@@ -103,7 +103,7 @@ function AgeVerificationResult(): ReactElement | null {
 }
 
 function CheckoutButton(): ReactElement | null {
-  const { isCartEmpty, clearCart } = useShoppingCart();
+  const { isCartEmpty } = useShoppingCart();
   const {
     shouldShowAgeVerification,
     hasPerformedAgeVerification,
@@ -111,16 +111,15 @@ function CheckoutButton(): ReactElement | null {
   } = useAgeVerification();
   const { logout } = useCriiptoVerify();
 
-  const to = shouldShowAgeVerification ? '/cart/checkout' : '/checkout/details';
-
   const shouldShow = hasPerformedAgeVerification ? ageVerificationPassed : true;
 
   if (!shouldShow) return null;
 
+  const to = shouldShowAgeVerification ? '/cart/checkout' : '/checkout/details';
+
   const onLinkClick: MouseEventHandler<HTMLAnchorElement> = (evt) => {
     if (!shouldShowAgeVerification) {
       evt.preventDefault();
-      clearCart();
       logout({
         redirectUri: `${window.location.origin}/callback`,
         state: btoa('/checkout/details'),
