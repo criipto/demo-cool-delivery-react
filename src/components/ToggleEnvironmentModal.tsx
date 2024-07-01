@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Dialog, DialogBody, Switch } from '@material-tailwind/react';
-import { EnvProps } from 'types';
 import { GearIcon } from './Icon';
+import { useEnvironment } from '../context/EnvironmentContext';
 
-export function ToggleEnvironmentModal({
-  onToggleEnv,
-  currentEnvironment,
-}: EnvProps) {
+export function ToggleEnvironmentModal() {
+  const { environment, toggleEnvironment } = useEnvironment();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -25,8 +23,8 @@ export function ToggleEnvironmentModal({
             id="env-toggle"
             label="Production"
             color="indigo"
-            checked={currentEnvironment === 'production'}
-            onChange={onToggleEnv}
+            checked={environment === 'production'}
+            onChange={toggleEnvironment}
           />
         </DialogBody>
       </Dialog>
